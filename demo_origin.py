@@ -1,4 +1,4 @@
-import argparse
+import argparse                                            # argparse是Python内置的一个用于命令项选项与参数解析的模块，
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -21,12 +21,12 @@ Asako Kanezaki.
 """
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = str(0)  # choose GPU:0
+os.environ['CUDA_VISIBLE_DEVICES'] = str(0)  # choose GPU:0    str(0)表示数组中的第一个元素
 
 use_cuda = torch.cuda.is_available()
 
-parser = argparse.ArgumentParser(description='PyTorch Unsupervised Segmentation')
-parser.add_argument('--nChannel', metavar='N', default=100, type=int,
+parser = argparse.ArgumentParser(description='PyTorch Unsupervised Segmentation')  #创建ArgumentParser()对象，
+parser.add_argument('--nChannel', metavar='N', default=100, type=int,              #调用add_argument来添加参数
                     help='number of channels')
 parser.add_argument('--maxIter', metavar='T', default=128, type=int,
                     help='number of maximum iterations')
@@ -44,7 +44,7 @@ parser.add_argument('--visualize', metavar='1 or 0', default=1, type=int,
                     help='visualization flag')
 parser.add_argument('--input', metavar='FILENAME', default='image/woof.jpg', type=str,
                     help='input image file name', )
-args = parser.parse_args()
+args = parser.parse_args()                                                         #使用parser.parse_args()来解析参数
 
 
 # CNN model
