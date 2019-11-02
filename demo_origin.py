@@ -26,7 +26,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = str(0)  # choose GPU:0    str(0)表示数�
 use_cuda = torch.cuda.is_available()
 
 parser = argparse.ArgumentParser(description='PyTorch Unsupervised Segmentation')  #创建ArgumentParser()对象，
-parser.add_argument('--nChannel', metavar='N', default=100, type=int,              #调用add_argument来添加参数
+parser.add_argument('--nChannel', metavar='N', default=100, type=int,              #调用add_argument来添加参数 default为不指定参数时的默认值，
                     help='number of channels')
 parser.add_argument('--maxIter', metavar='T', default=128, type=int,
                     help='number of maximum iterations')
